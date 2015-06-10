@@ -5,7 +5,8 @@ $DBG = 0 #debug?
 
 FileUtils.mkdir("log") unless File.directory?("log")
 
-listen 3000
+#listen 3000
+listen "/var/asyd/sockets/unicorn.sock", :backlog => 64
 worker_processes 1
 pid ".asyd.pid"
 stderr_path "log/asyd.log"
